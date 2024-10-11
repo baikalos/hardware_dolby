@@ -37,8 +37,14 @@ android_app_import {
 	},
 	privileged: true,
 	system_ext_specific: true,
-        overrides: [
-            "MusicFX", 
-            "AudioFX",
-        ],
 }
+
+prebuilt_etc_xml {
+	name: "dolby_manifest",
+	owner: "xiaomi",
+	src: "vendor.dolby.hardware.dms@2.0-service.xml",
+	filename_from_src: true,
+	sub_dir: "vintf/manifest",
+	soc_specific: true,
+}
+
